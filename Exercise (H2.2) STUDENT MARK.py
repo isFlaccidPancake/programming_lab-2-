@@ -36,7 +36,4 @@ for i in range(len(stringa)-1):
         score=''        
         check_1=i+1
         
-print(best_)
-print(worst_)
-
-    
+print(best_, worst_, sep='/n')
