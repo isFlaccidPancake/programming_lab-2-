@@ -9,7 +9,7 @@ def graphical(matrix):
         for j in i:
             print(j, end='\t')
         print('\n')
-def transpose(matrix):
+def transpose(matrix):   #here is not possible in place modification, as new colummn would overwright the older rows
     trans=[]
     for i in range(len(matrix[0])):
         new_row=[]
