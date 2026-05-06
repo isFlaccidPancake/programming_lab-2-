@@ -4,7 +4,7 @@ sumDigits(s):
 		try:
 			tot+= int(i)
 		except ValueError:
-			return None
+			continue
 	return tot
 stringa="input()"
 print(sumDigits(stringa))
