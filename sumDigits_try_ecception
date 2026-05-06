@@ -1,0 +1,10 @@
+sumDigits(s):
+	tot=0
+	for i in s:
+		try:
+			tot+= int(i)
+		except ValueError:
+			return None
+	return tot
+stringa="input()"
+print(sumDigits(stringa))
