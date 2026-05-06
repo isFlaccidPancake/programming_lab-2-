@@ -6,5 +6,5 @@ sumDigits(s):
 		except ValueError:
 			continue
 	return tot
-stringa="input()"
+stringa=input()
 print(sumDigits(stringa))
