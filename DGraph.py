@@ -30,3 +30,33 @@ class DGraph:
         self.newNode(d)
         if d not in self.getOut(s):#avoid redunadant edges when two nodes are already linked
             self.getOut(s).append(d)
+    def deleteNode(self,n):
+        if n in self.getNodes():
+            del self.__nodes[n]
+            for i in self.getNodes():
+                if n in self.__nodes[i]:
+                    self.__nodes[i].remove(n)
+     def getEdges(self):
+        edges=[]
+        for k in self.__nodes:
+            for j in self.__nodes[k]:
+                edges.append([k,j])
+        return edges
+     def removeEdge(self,s,d):
+         if d in self.__nodes[s]:
+             self.__nodes[s].remove(d)
+     def __str__(self):
+         s=''
+         s+=f'Nodes: {self.getNodes()}\nEdges:\n'
+         for i in self.getEdges():
+             s+= f'{i[0]}->{i[1]}\n'
+         return s[:-1]
+      def path(self,s,d):#any kind of path,recursiveeee, recursion can be x10 easier then iteration
+         if s==d:
+             return [s]
+         else:
+             for n in self.getOut(s):
+                 tempp=self.path(n,d)
+                 if tempp!= []:#IF NOT LIKE THAT GOES BACK AND TRIES Another n 
+                     return [s]+ tempp
+             return [] #no way to make any kind of path from s to d
